@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import noteContext from "./NoteContext";
 
 const NoteState=(props)=>{
-  const port = import.meta.env.PORT
-  const host=`http://localhost:${port}`
+  const port = import.meta.env.VITE_PORT;
+  const host=import.meta.env.VITE_HOST;
   const [notess,setNotes]=useState([])
   const getNote= async()=>{
     const response=await fetch(`${host}/api/notes/fetchallnotes`,{
